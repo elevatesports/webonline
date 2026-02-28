@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elevate Your Game with ElevateSports. Premium Table Tennis equipment and professional sports gear in India.">
+    <meta name="keywords" content="sports gear, table tennis, table tennis bat, sports equipment india, elevatesports">
+    <title>ElevateSports | Elevate Your Game</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏓</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo" onclick="app.navigate('home')">
+                elevate<span class="text-accent">sports</span>
+            </div>
+            <nav class="nav-links">
+                <button onclick="app.navigate('home')">Home</button>
+                <button onclick="app.navigate('brands')">Brands</button>
+                <button onclick="app.navigate('products')">Products</button>
+                <button onclick="app.navigate('about')">About Us</button>
+                <button onclick="app.navigate('contact')">Contact</button>
+            </nav>
+            <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                ☰
+            </div>
+        </div>
+    </header>
+<div id="purchase-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="app.closeModal()">&times;</span>
+            <div class="modal-header">
+                <h3>Cart Integration Pending 🚧</h3>
+            </div>
+            <div class="modal-body">
+                <p>We are thrilled you're interested in the <strong class="text-accent" id="modal-product-name"></strong>!</p>
+                <p>We are currently finalizing our online payment systems to bring you a seamless e-commerce experience, and we sincerely apologize for the slight delay.</p>
+                <p>You don't have to wait, though! You can purchase this item directly today by reaching out to our sales team.</p>
+                
+                <div class="contact-card">
+                    <p>📧 support@elevatesports.in</p>
+                    <p>📞 +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" style="width: 100%;" onclick="app.navigate('contact'); app.closeModal();">
+                    Go to Contact Form
+                </button>
+            </div>
+        </div>
+    </div>
+    <main id="app-root">
+        <section id="product-details" class="page-section">
+            <div class="container section-padding fade-in">
+                <button class="btn-back" onclick="app.navigate('products')">← Back to Products</button>
+                <div id="product-details-container">
+                    </div>
+            </div>
+        </section>
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <div class="hero-content fade-in">
+                    <h1>Elevate Your Game</h1>
+                    <p>Premium Table Tennis Equipment & Professional Sports Gear. Engineered for champions, accessible to everyone.</p>
+                    <button class="btn-primary" onclick="app.navigate('products')">Explore Products</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="brands" class="page-section">
+            <div class="container section-padding">
+                <h2 class="section-title">Our Trusted Brands</h2>
+                <div id="brands-grid" class="grid-layout fade-in">
+                    </div>
+            </div>
+        </section>
+
+        <section id="products" class="page-section">
+            <div class="container section-padding">
+                <h2 class="section-title">Latest Equipment</h2>
+                <div id="products-grid" class="grid-layout fade-in">
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <div class="container section-padding fade-in">
+                <h2 class="section-title">About ElevateSports</h2>
+                <div class="about-content">
+                    <div class="card">
+                        <h3>Our Vision</h3>
+                        <p>To be India's premier destination for high-performance sports equipment, empowering athletes of all levels to reach their maximum potential.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Mission</h3>
+                        <p>Starting with a curated selection of elite table tennis gear, we are dedicated to bringing quality, durability, and technological edge to the sporting community.</p>
+                    </div>
+                    <div class="card">
+                        <h3>The Future</h3>
+                        <p>We are rapidly building our infrastructure to expand into badminton, tennis, and fitness apparel. A full-scale e-commerce experience is launching soon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <div class="container section-padding fade-in">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p><strong>Email:</strong> support@elevatesports.in</p>
+                        <p><strong>Phone:</strong> +91 98765 43210 (Placeholder)</p>
+                        <p><strong>HQ:</strong> Bengaluru, India</p>
+                        
+                        <div class="map-placeholder">
+                            [ Google Maps Integration Placeholder ]
+                        </div>
+                    </div>
+                    <form id="elevate-contact-form" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    
+    <input type="text" name="contact_info" placeholder="Your Email or Phone Number" required>
+    
+    <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
+    <button type="submit" id="submit-btn" class="btn-primary">Send Message</button>
+</form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>elevate<span class="text-accent">sports</span></h3>
+                <p>Building the future of sports retail.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ElevateSports.in. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
