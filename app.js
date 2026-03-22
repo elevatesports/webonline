@@ -20,7 +20,7 @@ const dummyBrands = [
 ];
 
 const dummyProducts = [
- { 
+    { 
         id: 1, brand: "Joola", name: "Elevate Pro Tournament Table", 
         price: "₹35,000", originalPrice: "₹42,000", 
         img: "https://images.unsplash.com/photo-1511516315533-356bc0a8504f?auto=format&fit=crop&q=80&w=600",
@@ -33,8 +33,21 @@ const dummyProducts = [
         img: "https://images.unsplash.com/photo-1626245001392-7abac1f9f9bc?auto=format&fit=crop&q=80&w=600",
         description: "High-tension rubber providing maximum spin and dwell time. Perfect for modern topspin attackers.",
         specs: { "Sponge Hardness": "Medium-Hard", "Thickness": "2.1mm", "Type": "Inverted" }
-    }
+    },
 ];
+
+// --- HELPER FUNCTION: Calculate Discount Percentage ---
+function calculateDiscount(currentPriceStr, originalPriceStr) {
+    // Strip out non-numeric characters (like ₹ and commas) to do math
+    const current = parseInt(currentPriceStr.replace(/[^0-9]/g, ''), 10);
+    const original = parseInt(originalPriceStr.replace(/[^0-9]/g, ''), 10);
+    
+    if (original > current) {
+        const discount = Math.round(((original - current) / original) * 100);
+        return `${discount}% OFF`;
+    }
+    return 'SALE'; // Fallback if math fails
+}
 
 // --- CORE APPLICATION LOGIC ---
 const app = {
@@ -126,7 +139,7 @@ const app = {
                 btn.style.opacity = '0.7';
             }
 
-            // *** PASTE YOUR GOOGLE SCRIPT WEB APP URL BELOW ***
+            // Script URL dynamically connected to your Google Sheet
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzAOL7Tc9kNqaIMeAwr0G9eQvyDceOKiLpUtWaV0-mAApWopEuAQYwQK2zuINfqWDRQ/exec'; 
             
             const formData = new FormData(form);
@@ -173,14 +186,32 @@ const app = {
             `).join('');
         }
 
+        // Generate Pricing HTML for the details page
+        const priceHTML = product.originalPrice 
+            ? `<div class="price-container" style="margin-bottom: 20px;">
+                   <p class="product-info-price" style="margin: 0;">${product.price}</p>
+                   <p class="price-original" style="font-size: 1.2rem;">${product.originalPrice}</p>
+               </div>`
+            : `<p class="product-info-price">${product.price}</p>`;
+
+        // Generate dynamic badge text (e.g. "15% OFF")
+        let badgeText = "SALE";
+        if (product.originalPrice) {
+            badgeText = calculateDiscount(product.price, product.originalPrice);
+        }
+
+        const badgeHTML = product.originalPrice ? `<span class="discount-badge" style="position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 10px;">${badgeText}</span>` : '';
+
+
         const container = document.getElementById('product-details-container');
         container.innerHTML = `
             <div class="product-details-grid">
                 <img src="${product.img}" alt="${product.name}" class="product-details-image">
                 <div class="product-info">
+                    ${badgeHTML}
                     <p class="product-info-brand">${product.brand}</p>
                     <h1 class="product-info-title">${product.name}</h1>
-                    <p class="product-info-price">${product.price}</p>
+                    ${priceHTML}
                     <p class="product-info-desc">${product.description}</p>
                     
                     <ul class="product-specs">
@@ -225,19 +256,43 @@ const app = {
                 </div>
             `;
         } else {
-            productsHTML += productsToShow.map(product => `
-                <article class="card">
-                    <img src="${product.img}" alt="${product.name}" class="card-img" loading="lazy">
-                    <div class="card-body">
-                        <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">${product.brand}</p>
-                        <h3>${product.name}</h3>
-                        <p class="card-price">${product.price}</p>
-                        <button class="btn-primary" style="width: 100%; padding: 8px;" onclick="app.viewProduct(${product.id})">
-                            View Details
-                        </button>
-                    </div>
-                </article>
-            `).join('');
+            productsHTML += productsToShow.map(product => {
+                // 1. Check if the product has a discount
+                const hasDiscount = product.originalPrice ? true : false;
+                
+                // 2. Calculate dynamic badge text
+                let badgeText = "SALE";
+                if (hasDiscount) {
+                    badgeText = calculateDiscount(product.price, product.originalPrice);
+                }
+
+                // 3. Generate the Badge HTML if discounted
+                const badgeHTML = hasDiscount ? `<span class="discount-badge">${badgeText}</span>` : '';
+                
+                // 4. Generate the Pricing HTML (Strikethrough + New Price)
+                const priceHTML = hasDiscount 
+                    ? `<div class="price-container">
+                           <p class="card-price">${product.price}</p>
+                           <p class="price-original">${product.originalPrice}</p>
+                       </div>`
+                    : `<div class="price-container"><p class="card-price">${product.price}</p></div>`;
+
+                // 5. Return the full card HTML
+                return `
+                    <article class="card">
+                        ${badgeHTML}
+                        <img src="${product.img}" alt="${product.name}" class="card-img" loading="lazy">
+                        <div class="card-body">
+                            <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">${product.brand}</p>
+                            <h3>${product.name}</h3>
+                            ${priceHTML}
+                            <button class="btn-primary" style="width: 100%; padding: 8px;" onclick="app.viewProduct(${product.id})">
+                                View Details
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
         }
 
         grid.innerHTML = productsHTML;
