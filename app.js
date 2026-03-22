@@ -20,15 +20,16 @@ const dummyBrands = [
 ];
 
 const dummyProducts = [
+ const products = [
   {
-    "id": 1,
-    "brand": "Butterfly",
-    "name": "Tenergy 05 Table Tennis Rubber",
-    "price": "₹5,549",
-    "originalPrice": "₹10,100",
-    "img": "https://image2url.com/r2/default/images/1774177748375-1d1576e7-6cec-4ba1-9739-fbf2d787d033.webp",
-    "description": "Tenergy 05 is the original rubber in the Tenergy series, designed for players who thrive on topspin-heavy offensive play. Featuring High Tension and Spring Sponge technologies, it allows for explosive spin and consistent power close to or away from the table. Named after Pimples Code No. 5, it remains a favorite among world-class players for its dynamic loop potential and durability.",
-    "specs": {
+    id: 1,
+    brand: "Butterfly",
+    name: "Tenergy 05 Table Tennis Rubber",
+    price: "₹5,549",
+    originalPrice: "₹10,100",
+    img: "https://image2url.com/r2/default/images/1774177748375-1d1576e7-6cec-4ba1-9739-fbf2d787d033.webp",
+    description: "Tenergy 05 is the original rubber in the Tenergy series, designed for players who thrive on topspin-heavy offensive play. Featuring High Tension and Spring Sponge technologies, it allows for explosive spin and consistent power close to or away from the table.",
+    specs: {
       "Type": "High Tension Pimples-In",
       "Technology": "High Tension, Spring Sponge",
       "Speed": "83",
@@ -41,14 +42,14 @@ const dummyProducts = [
     }
   },
   {
-    "id": 2,
-    "brand": "Butterfly",
-    "name": "Tenergy 05 FX Table Tennis Rubber",
-    "price": "₹5,249",
-    "originalPrice": "₹10,100",
-    "img": "https://image2url.com/r2/default/images/1774178820648-4c1f5a96-4a5b-4593-84ee-9a8a601f9263.webp",
-    "description": "Tenergy FX produces a high level of control without losing high performance. Tenergy 05 FX combines High Tension technology with a version of Spring Sponge that produces a softer feeling. It is a result of extensive research, the name deriving from Code 05. Tenergy 05 FX is the perfect answer for players who seek to play heavy topspin strokes while maintaining control.",
-    "specs": {
+    id: 2,
+    brand: "Butterfly",
+    name: "Tenergy 05 FX Table Tennis Rubber",
+    price: "₹5,249",
+    originalPrice: "₹10,100",
+    img: "https://image2url.com/r2/default/images/1774178820648-4c1f5a96-4a5b-4593-84ee-9a8a601f9263.webp",
+    description: "Tenergy FX produces a high level of control without losing high performance. Tenergy 05 FX combines High Tension technology with a version of Spring Sponge that produces a softer feeling.",
+    specs: {
       "Type": "High Tension Pimples-In",
       "Technology": "High Tension, Spring Sponge",
       "Speed": "81",
@@ -59,7 +60,36 @@ const dummyProducts = [
       "Sponge Thickness": "2.1",
       "Country of Origin": "Japan"
     }
+  },
+  {
+    id: 3,
+    brand: "Joola",
+    name: "Elevate Pro Tournament Table",
+    price: "₹35,000",
+    originalPrice: "₹42,000",
+    img: "https://images.unsplash.com/photo-1511516315533-356bc0a8504f?auto=format&fit=crop&q=80&w=600",
+    description: "ITTF approved competition table with a 25mm thick top for the truest bounce. Folds easily for compact storage.",
+    specs: {
+      "Thickness": "25mm",
+      "Weight": "115kg",
+      "Certification": "ITTF Approved"
+    }
+  },
+  {
+    id: 4, // Changed ID to 4 to avoid duplication with Tenergy 05 FX
+    brand: "Stiga",
+    name: "SpinMaster Rubber (Red)",
+    price: "₹2,100",
+    originalPrice: null, // Added this so your discount logic doesn't break
+    img: "https://images.unsplash.com/photo-1626245001392-7abac1f9f9bc?auto=format&fit=crop&q=80&w=600",
+    description: "High-tension rubber providing maximum spin and dwell time. Perfect for modern topspin attackers.",
+    specs: {
+      "Sponge Hardness": "Medium-Hard",
+      "Thickness": "2.1mm",
+      "Type": "Inverted"
+    }
   }
+];
 ]
 // --- CORE APPLICATION LOGIC ---
 const app = {
