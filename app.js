@@ -20,41 +20,66 @@ const dummyBrands = [
 ];
 
 const dummyProducts = [
-    {id: 1, brand: "Butterfly", name: "TENERGY 05 TT Rubber", 
-        price: "₹5’549", originalPrice: "₹10,100", 
-        img: " https://image2url.com/r2/default/images/1774177748375-1d1576e7-6cec-4ba1-9739-fbf2d787d033.webp",
-        description: "Tenergy 05 is the original rubber in the Tenergy series, designed for players who thrive on topspin-heavy offensive play. Featuring High Tension and Spring Sponge technologies, it allows for explosive spin and consistent power close to or away from the table.",
-        specs: { "Type": "High Tension Pimple-In", "Technology": "High Tension, Spring Sponge", "Speed": "83", “Spin”: “76”, “Arc”: “79”, “Sponge Hardness”: “36”, “Sheet Color”: “Red, Black”, “Sponge Thickness”: “2.1”, “Country Of Origin”: “Japan”}},
-{
-
-id: 2, brand: "Butterfly", name: "TENERGY 05 FX TT Rubber", 
-        price: "₹5’249", originalPrice: "₹10,100", 
-        img: "https://image2url.com/r2/default/images/1774178820648-4c1f5a96-4a5b-4593-84ee-9a8a601f9263.webp",
-        description: " Tenergy FX produces a high level of control without losing high performance. Tenergy 05 FX combines High Tension technology with a version of Spring Sponge that produces a softer feeling. It is a result of extensive research, the name deriving from Code 05, being one of many experiments carried out by the Butterfly Research Centre. Tenergy 05 FX is the perfect answer for players who seek to play heavy topspin strokes, whilst maintaining control.",
-        specs: { "Type": "High Tension Pimple-In", "Technology": "High Tension, Spring Sponge", "Speed": "81", “Spin”: “64”, “Arc”: “65”, “Sponge Hardness”: “32”, “Sheet Color”: “Red, Black”, “Sponge Thickness”: “2.1”, “Country Of Origin”: “Japan”}},
- 
-{id: 3, brand: "Butterfly", name: "DIGNICS 09 C TT Rubber", 
-        price: "₹6,449", originalPrice: "₹12,900", 
-        img: "https://image2url.com/r2/default/images/1774760646496-bb17b93b-38d7-41c6-8210-fbe82010fbff.webp",
-        description: " Compatible friction and a high level bounce is realised thanks to the synergy effect between the original top sheet and a rather hard Spring Sponge X, to bring out the features of a friction rubber while upgrading the High Tension effect. The pimples code No. 209 delivers topspin and defensive play with high amount of spin as well as ease of over-the-table techniques and counter topspin. Dignics 09C, with the upgraded friction High Tension features, guides a player who expects the unique feeling of a friction rubber to new heights.",
-        specs: { "Type": "High Friction High Tension Pimples-In ", "Technology": "High Tension, Spring SpongeX", "Speed": "79", “Spin”: “96”, “Arc”: “96”, “Sponge Hardness”: “44”, “Sheet Color”: “Red, Black”, “Sponge Thickness”: “2.1”, “Country Of Origin”: “Japan”}},
-{id: 4, brand: "Butterfly", name: "DIGNICS 05 TT Rubber", 
-        price: "₹6,349", originalPrice: "₹12,599", 
-        img: " https://image2url.com/r2/default/images/1774759354874-8f030ab2-2725-43e1-b6e6-f6a16a9da50c.webp",
-        description: " Dignics guides your play to a more advanced level. The essence is the combination of Spring Sponge X, the advanced version of Spring Sponge which has more elasticity; the uniquely composed top sheet, with strengthened abrasion, proves great resistance on the surface, providing the feeling of holding the ball at impact. Adopting pimples code No. 05 recognised for its high spin performance, Dignics 05 is recommended for the player who seeks to generate a high level attacking play imparting powerful topspin, as well as counter topspin play both close to the table and at mid distance..",
-        specs: { "Type": "High Tension Pimples-In,", "Technology": "High Tension, Spring SpongeX", "Speed": "86", “Spin”: “85”, “Arc”: “88”, “Sponge Hardness”: “40”, “Sheet Color”: “Red, Black”, “Sponge Thickness”: “2.1”, “Country Of Origin”: “Japan”}},
-{id: 5, brand: "Butterfly", name: "Glayzer 09C TT Rubber", 
-        price: "₹3,749", originalPrice: "₹8,999", 
-        img: " https://image2url.com/r2/default/images/1774761821421-e0b97df6-85c8-4965-a8f2-dde577922ff5.webp",
-        description: " Grey Spring Sponge X is applied to Glayzer 09C. Strokes with a stable trajectory are made possible, while combining powerful heavy spin with ease of over-the-table techniques at a high level. It is thanks to the combination of a friction top sheet that provides the High Tension effect and Spring Sponge X with a hardness at 42 degrees. The rubber provides players of wider ranging standards the pleasure of executing top spin strokes with heavy spin, unique to a friction High Tension rubber, as well as decisive counter-attacking play on the table.",
-        specs: { "Type": "High Tension High Friction Pimples-In,", "Technology": "High Tension, Spring SpongeX", "Speed": "75", “Spin”: “87”, “Arc”: “95”, “Sponge Hardness”: “42”, “Sheet Color”: “Red, Black”, “Sponge Thickness”: “2.1”, “Country Of Origin”: “Japan”}},
-
-{id: 6, brand: "Butterfly", name: "Glayzer TT Rubber", 
-        price: "₹3,749", originalPrice: "₹8,999", 
-        img: " https://image2url.com/r2/default/images/1774762548074-05816153-4054-4102-9e58-476740c2c03c.webp",
-        description: " Grey Spring Sponge X is applied to Glayzer. Power, generated by spin, is brought to the stroke. Also, a stable trajectory is made possible thanks to the combination of a top sheet which possesses the ideal feeling of holding the ball, and the strengthened abrasion resistance of the surface adopting Spring Sponge X with a hardness at 38 degrees. Thus, this rubber provides players of wider ranging levels the joy to execute powerful top spin strokes from both forehand and backhand, focusing on spin and counter-attacking play.",
-        specs: { "Type": "High Tension Pimples-In,", "Technology": "High Tension, Spring SpongeX", "Speed": "81", “Spin”: “83”, “Arc”: “82”, “Sponge Hardness”: “38”, “Sheet Color”: “Red, Black”, “Sponge Thickness”: “2.1”, “Country Of Origin”: “Japan”}}
-
+   {
+    id: 1, 
+    brand: "Butterfly", 
+    name: "TENERGY 05 TT Rubber", 
+    price: "₹5,549", 
+    originalPrice: "₹10,100", 
+    img: "https://image2url.com/r2/default/images/1774177748375-1d1576e7-6cec-4ba1-9739-fbf2d787d033.webp",
+    description: "Tenergy 05 is the original rubber in the Tenergy series, designed for players who thrive on topspin-heavy offensive play. Featuring High Tension and Spring Sponge technologies, it allows for explosive spin and consistent power close to or away from the table.",
+    specs: { "Type": "High Tension Pimple-In", "Technology": "High Tension, Spring Sponge", "Speed": "83", "Spin": "76", "Arc": "79", "Sponge Hardness": "36", "Sheet Color": "Red, Black", "Sponge Thickness": "2.1", "Country Of Origin": "Japan" }
+ },
+ {
+    id: 2, 
+    brand: "Butterfly", 
+    name: "TENERGY 05 FX TT Rubber", 
+    price: "₹5,249", 
+    originalPrice: "₹10,100", 
+    img: "https://image2url.com/r2/default/images/1774178820648-4c1f5a96-4a5b-4593-84ee-9a8a601f9263.webp",
+    description: "Tenergy FX produces a high level of control without losing high performance. Tenergy 05 FX combines High Tension technology with a version of Spring Sponge that produces a softer feeling. Tenergy 05 FX is the perfect answer for players who seek to play heavy topspin strokes, whilst maintaining control.",
+    specs: { "Type": "High Tension Pimple-In", "Technology": "High Tension, Spring Sponge", "Speed": "81", "Spin": "64", "Arc": "65", "Sponge Hardness": "32", "Sheet Color": "Red, Black", "Sponge Thickness": "2.1", "Country Of Origin": "Japan" }
+ },
+ {
+    id: 3, 
+    brand: "Butterfly", 
+    name: "DIGNICS 09 C TT Rubber", 
+    price: "₹6,449", 
+    originalPrice: "₹12,900", 
+    img: "https://image2url.com/r2/default/images/1774760646496-bb17b93b-38d7-41c6-8210-fbe82010fbff.webp",
+    description: "Compatible friction and a high level bounce is realised thanks to the synergy effect between the original top sheet and a rather hard Spring Sponge X. The pimples code No. 209 delivers topspin and defensive play with high amount of spin.",
+    specs: { "Type": "High Friction High Tension Pimples-In", "Technology": "High Tension, Spring SpongeX", "Speed": "79", "Spin": "96", "Arc": "96", "Sponge Hardness": "44", "Sheet Color": "Red, Black", "Sponge Thickness": "2.1", "Country Of Origin": "Japan" }
+ },
+ {
+    id: 4, 
+    brand: "Butterfly", 
+    name: "DIGNICS 05 TT Rubber", 
+    price: "₹6,349", 
+    originalPrice: "₹12,599", 
+    img: "https://image2url.com/r2/default/images/1774759354874-8f030ab2-2725-43e1-b6e6-f6a16a9da50c.webp",
+    description: "Dignics guides your play to a more advanced level. Adopting pimples code No. 05 recognised for its high spin performance, Dignics 05 is recommended for the player who seeks to generate a high level attacking play.",
+    specs: { "Type": "High Tension Pimples-In", "Technology": "High Tension, Spring SpongeX", "Speed": "86", "Spin": "85", "Arc": "88", "Sponge Hardness": "40", "Sheet Color": "Red, Black", "Sponge Thickness": "2.1", "Country Of Origin": "Japan" }
+ },
+ {
+    id: 5, 
+    brand: "Butterfly", 
+    name: "Glayzer 09C TT Rubber", 
+    price: "₹3,749", 
+    originalPrice: "₹8,999", 
+    img: "https://image2url.com/r2/default/images/1774761821421-e0b97df6-85c8-4965-a8f2-dde577922ff5.webp",
+    description: "Grey Spring Sponge X is applied to Glayzer 09C. Strokes with a stable trajectory are made possible, while combining powerful heavy spin with ease of over-the-table techniques at a high level.",
+    specs: { "Type": "High Tension High Friction Pimples-In", "Technology": "High Tension, Spring SpongeX", "Speed": "75", "Spin": "87", "Arc": "95", "Sponge Hardness": "42", "Sheet Color": "Red, Black", "Sponge Thickness": "2.1", "Country Of Origin": "Japan" }
+ },
+ {
+    id: 6, 
+    brand: "Butterfly", 
+    name: "Glayzer TT Rubber", 
+    price: "₹3,749", 
+    originalPrice: "₹8,999", 
+    img: "https://image2url.com/r2/default/images/1774762548074-05816153-4054-4102-9e58-476740c2c03c.webp",
+    description: "Grey Spring Sponge X is applied to Glayzer. Power, generated by spin, is brought to the stroke. A stable trajectory is made possible thanks to the combination of a top sheet which possesses the ideal feeling of holding the ball.",
+    specs: { "Type": "High Tension Pimples-In", "Technology": "High Tension, Spring SpongeX", "Speed": "81", "Spin": "83", "Arc": "82", "Sponge Hardness": "38", "Sheet Color": "Red, Black", "Sponge Thickness": "2.1", "Country Of Origin": "Japan" }
+ },
 ];
 
 // --- HELPER FUNCTION: Calculate Discount Percentage ---
