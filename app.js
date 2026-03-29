@@ -107,7 +107,7 @@ const app = {
         const target = document.getElementById(pageId);
         if(target) {
             target.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+           globalThis.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         const navLinks = document.querySelector('.nav-links');
@@ -191,7 +191,7 @@ const app = {
             const formData = new FormData(form);
 
             fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => {
+               .then(_response => {
                     alert('Success! Your message has been sent directly to our team. We will be in touch shortly.');
                     form.reset(); // Clear the form
                     
